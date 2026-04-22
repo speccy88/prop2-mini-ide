@@ -1,0 +1,5 @@
+DAT
+loop
+	DRVNOT #56
+	WAITX  ##10_000_000 / 2
+	JMP    #loop

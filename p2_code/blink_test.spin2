@@ -1,0 +1,19 @@
+'' Simple LED blink test program
+CON
+  _CLKFREQ = 200_000_000
+  LED_PIN = 56
+
+PUB Main() | counter
+  '' Configure pin as output
+  pinstart(LED_PIN, P_OE, 0, 0)
+  
+  '' Infinite blink loop
+  repeat
+    counter++
+    if counter > 100_000_000
+      pinhigh(LED_PIN)
+    elseif counter > 50_000_000
+      pinlow(LED_PIN)
+    elseif counter > 0
+      counter := 0
+
